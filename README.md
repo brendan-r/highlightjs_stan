@@ -4,6 +4,9 @@ This repo contains a little bit of code to produce a highlight.js language JavaS
 
 `./stan_funcs.R` webscrapes the relevant `.tex` manual files from the [Stan GitHub repo](https://github.com/stan-dev/stan), and pulls out some of Stan's keywords, for adding to the template file (`./highlight-stan.template.js`). It writes the result to `./highlight.js/src/languages/stan.js`, in a forked git submodule of the highlight.js source.
 
+
+![highlight.js syntax highlighting for Stan, (probabilistic programming language)](https://s3-us-west-2.amazonaws.com/brendan-misc/screenshot.png)
+
 ## Features
 Highlighting for Stan's:
 
