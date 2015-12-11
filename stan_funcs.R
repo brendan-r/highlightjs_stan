@@ -3,17 +3,20 @@ library(stringr)
 
 stan_dev <- "https://raw.githubusercontent.com/stan-dev/stan/develop/"
 
+
+# Stan Functions  --------------------------------------------------------
+
+stan_functions_url <- "https://raw.githubusercontent.com/stan-dev/stan/v2.9.0/doc/stan-functions-2.9.0.txt"
+
+stan_functions <- paste(readLines(stan_functions_url), sep="\n", collapse="\n")
+
+
 # Stan Distributions ------------------------------------------------------
 
-stan_dists_url <- paste0(stan_dev, "src/docs/stan-reference/distributions.tex")
+dist <- stan_functions %>%
+  str_extract_all(".*;~;") %>% unlist() %>%
+  str_replace(";~;", "") %>% unique()
 
-stan_dists <- paste(readLines(stan_dists_url), collapse = "\n")
-
-dist <- stan_dists %>%
-  str_extract_all("pitem\\{.*") %>% unlist() %>%
-  str_replace("pitem\\{.*?\\}\\{", "") %>%
-  str_replace("\\}.*", "") %>%
-  str_replace_all("\\\\_", "_")
 
 # Remove beta and gamma (for now), as they're commonly used for parameter
 # variables
