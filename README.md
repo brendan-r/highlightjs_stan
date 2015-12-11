@@ -1,6 +1,6 @@
 # highlight.js Sytax highlighting for Stan
 
-This repo contains a little bit of code to produce a highlight.js language JavaScript file for the [Stan](http://mc-stan.org) probabilistic programming language.
+This repo contains a little bit of code to produce highlight.js support for the [Stan](http://mc-stan.org) probabilistic programming language.
 
 `./stan_funcs.R` webscrapes the relevant `.tex` manual files from the [Stan GitHub repo](https://github.com/stan-dev/stan), and pulls out some of Stan's keywords, for adding to the template file (`./highlight-stan.template.js`). It writes the result to `./highlight.js/src/languages/stan.js`, in a forked git submodule of the highlight.js source.
 

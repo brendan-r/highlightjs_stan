@@ -19,7 +19,6 @@ dist <- stan_dists %>%
 # variables
 dist <- dist[!dist %in% c("beta", "gamma")]
 
-# Add a relevance of 10 to
 
 # Built-ins ---------------------------------------------------------------
 
